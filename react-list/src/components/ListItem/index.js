@@ -42,7 +42,7 @@ class ListItem extends React.Component {
                 </ListItemInfoStyled>
                 <ListItemBtnWrapperStyled>
                     <ListItemBtnStyled onClick={this.displayItemView}>View</ListItemBtnStyled>
-                    <ListItemBtnStyled>Edit</ListItemBtnStyled>
+                    {/* <ListItemBtnStyled>Edit</ListItemBtnStyled> */}
                 </ListItemBtnWrapperStyled>
             </ListItemStyled>
         )
