@@ -1,0 +1,9 @@
+#app-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px 120px;
+}
+body {
+    background-color: #f0f0f0;
+}
