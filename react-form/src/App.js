@@ -31,11 +31,10 @@ export class App extends React.Component {
 
   handleSubmit = () => {
     const { item } = this.props
-    // alert(`Item: \n ${
-    //     Object.keys(this.state).map(key => `${key}: ${this.state[key]}\n`)
-    // } was successfuly submited`)
+    alert(`Item: \n ${
+        Object.keys(this.state).map(key => `${key}: ${this.state[key]}\n`)
+    } was successfuly submited`)
 
-    // ir buscar os items ao local state
     const items = JSON.parse(localStorage.getItem('items'))
     if (item) {
       const itemToUpdateIndex = items.findIndex(element => item.id == element.id)
