@@ -12,7 +12,7 @@ export const SearchFormStyled = styled.form`
 
 export const SearchFormInputStyled = styled.input`
     width: 100%;
-    padding: 10px 50px 10px 20px;
+    padding: 12px 50px 10px 12px;
     border: none;
     color: grey;
     font-size: 14px;
