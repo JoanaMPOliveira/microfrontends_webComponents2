@@ -8,15 +8,19 @@ class ListItem extends React.Component {
         item: PropTypes.object,
     }
 
-    displayItemView = (e) => {
+    getAppContainerChildren = () => {
+        const appContainer = document.getElementById('app-container')
+        return appContainer.children
+    }
+
+    displayWebComponent = (e, webComponet) => {
         const { item } = this.props
         e.preventDefault()
-
-
-        const appContainer = document.getElementById('app-container')
-        const containerChildren = appContainer.children
+        
+        const containerChildren = this.getAppContainerChildren()
+        
         for (let child of containerChildren) {
-            if (child.tagName !== 'REACT-ITEM-VIEW') {
+            if (child.tagName !== webComponet) {
                 child.setAttribute('visibility', 'hidden')
             } else {
                 child.setAttribute('visibility', 'visible')
@@ -41,8 +45,8 @@ class ListItem extends React.Component {
                     <span>{ item.price }</span>
                 </ListItemInfoStyled>
                 <ListItemBtnWrapperStyled>
-                    <ListItemBtnStyled onClick={this.displayItemView}>View</ListItemBtnStyled>
-                    {/* <ListItemBtnStyled>Edit</ListItemBtnStyled> */}
+                    <ListItemBtnStyled onClick={(e) => this.displayWebComponent(e, 'REACT-ITEM-VIEW')}>View</ListItemBtnStyled>
+                    <ListItemBtnStyled onClick={(e) => this.displayWebComponent(e, 'REACT-FORM')}>Edit</ListItemBtnStyled>
                 </ListItemBtnWrapperStyled>
             </ListItemStyled>
         )
